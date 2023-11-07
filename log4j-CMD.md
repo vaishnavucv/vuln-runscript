@@ -1,5 +1,8 @@
 # command for configuring log4j.
 
+    Copy the command provided below.
+    Paste the copied command into the Host terminal, one by one....!
+
 #### 1) update the host Machine 
 ```
 sudo apt-get update
@@ -8,36 +11,40 @@ sudo apt-get update
 ```
 sudo apt-get install -y openjdk-11-jdk
 ```
-#### 3) Download solr
+#### 3) Navigate to Home directory
+```
+cd 
+```
+#### 4) Download solr
 ```
 wget https://archive.apache.org/dist/lucene/solr/8.8.2/solr-8.8.2.tgz
 ```
-#### Extract the tarball
+#### 5) Extract the tarball
 ```
 tar xzf solr-8.8.2.tgz
 ```
-#### Navigate to the solr bin directory
+#### 6) Navigate to the solr bin directory
 ```
 cd solr-8.8.2/bin
 ```
-#### Install solr service
+#### 7) Install solr service
 ```
 sudo ./install_solr_service.sh ../../solr-8.8.2.tgz
 ```
-#### Enable solr service
+#### 8) Enable solr service
 ```
 sudo systemctl enable solr
 ```
-#### Restart solr service
+#### 9) Restart solr service
 ```
 sudo systemctl restart solr
 ```
-#### Check solr service status
+#### 10) Check solr service status
 ```
 sudo systemctl status solr | sed -n '1,5p'
 ```
-#### Cleanup: remove the downloaded tarball 
+#### 11) Cleanup: remove the downloaded tarball 
 ```
-rm -rf ../solr-8.8.2.tgz ../solr-8.8.2
+cd ; sudo rm -rf solr-8.8.2*
 ```
 
